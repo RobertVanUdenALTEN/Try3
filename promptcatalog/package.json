@@ -1,0 +1,35 @@
+{
+  "name": "myext",
+  "displayName": "My Extension",
+  "description": "A VS Code extension with a Copilot Chat participant",
+  "version": "0.0.1",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onChatParticipant:myext.helper"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "chatParticipants": [
+      {
+        "id": "myext.helper",
+        "name": "helper",
+        "fullName": "Project Helper",
+        "description": "Ask me about this workspace",
+        "isSticky": true
+      }
+    ]
+  },
+  "scripts": {
+    "test": "node ./test/runTest.js"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/node": "20.x",
+    "eslint": "^8.57.0"
+  }
+}
